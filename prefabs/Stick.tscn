@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bql0mohtjr4l7"]
+
+[ext_resource type="Texture2D" uid="uid://bkj733s2kfrl6" path="res://textures/stick.png" id="1_156ly"]
+[ext_resource type="Script" path="res://scripts/Stick.cs" id="1_dnp25"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds75g"]
+size = Vector2(1, 1)
+
+[node name="Stick" type="StaticBody2D" node_paths=PackedStringArray("stick")]
+script = ExtResource("1_dnp25")
+stick = NodePath(".")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-75, 0)
+scale = Vector2(150, 2)
+shape = SubResource("RectangleShape2D_ds75g")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_156ly")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0186w7tlju1m"]
+
+[ext_resource type="Texture2D" uid="uid://blqkhoidq85la" path="res://textures/background.png" id="1_nu1te"]
+[ext_resource type="Script" path="res://scripts/StickVisualization.cs" id="1_rx2ls"]
+[ext_resource type="PackedScene" uid="uid://bql0mohtjr4l7" path="res://prefabs/Stick.tscn" id="2_51u7u"]
+
+[node name="StickVisualization" type="Node2D" node_paths=PackedStringArray("stick")]
+script = ExtResource("1_rx2ls")
+stick = NodePath("Stick")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(5, 160)
+texture = ExtResource("1_nu1te")
+centered = false
+offset = Vector2(-0.5, 0)
+
+[node name="Stick" parent="." instance=ExtResource("2_51u7u")]
+rotation = -1.5708

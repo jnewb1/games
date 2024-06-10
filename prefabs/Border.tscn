@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://kv3eg0cse7r3"]
+
+[ext_resource type="Texture2D" uid="uid://cklmiv707g6sk" path="res://textures/border.png" id="1_22oy2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mlp00"]
+bounce = 0.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is0km"]
+size = Vector2(1, 1)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_mlp00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_is0km")
+
+[node name="border_l" type="Sprite2D" parent="."]
+texture = ExtResource("1_22oy2")

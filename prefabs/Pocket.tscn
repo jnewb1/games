@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://226o2h1np8v6"]
+
+[ext_resource type="Texture2D" uid="uid://ckm1tcxe1w7wq" path="res://textures/pocket.png" id="1_6xblp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dmyp"]
+radius = 5.0
+
+[node name="Pocket" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4dmyp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(10, 10)
+texture = ExtResource("1_6xblp")

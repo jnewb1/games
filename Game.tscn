@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceo2cqqg0tnnl"]
+
+[ext_resource type="PackedScene" uid="uid://d356ow0qkjm32" path="res://prefabs/Table.tscn" id="1_prx5l"]
+[ext_resource type="Script" path="res://scripts/Game.cs" id="1_ssdp8"]
+[ext_resource type="PackedScene" uid="uid://bql0mohtjr4l7" path="res://prefabs/Stick.tscn" id="3_ayhgy"]
+[ext_resource type="PackedScene" uid="uid://b0186w7tlju1m" path="res://prefabs/StickVisualization.tscn" id="5_3iwaj"]
+
+[node name="game" type="Node2D" node_paths=PackedStringArray("stick", "stickVisualization", "table")]
+script = ExtResource("1_ssdp8")
+stick = NodePath("Stick")
+stickVisualization = NodePath("StickVisualization")
+table = NodePath("table")
+
+[node name="table" parent="." instance=ExtResource("1_prx5l")]
+position = Vector2(16, 23)
+
+[node name="Stick" parent="." instance=ExtResource("3_ayhgy")]
+position = Vector2(43, 89)
+collision_layer = 0
+
+[node name="StickVisualization" parent="." instance=ExtResource("5_3iwaj")]
+position = Vector2(291, 29)

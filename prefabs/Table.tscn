@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://d356ow0qkjm32"]
+
+[ext_resource type="Script" path="res://scripts/Table.cs" id="1_3kx5o"]
+[ext_resource type="Texture2D" uid="uid://dtkqdgll7fveu" path="res://textures/table.png" id="1_86lqi"]
+[ext_resource type="PackedScene" uid="uid://kv3eg0cse7r3" path="res://prefabs/Border.tscn" id="2_6xl5m"]
+[ext_resource type="PackedScene" uid="uid://cyljq4uet1tb6" path="res://prefabs/Ball.tscn" id="2_afugx"]
+[ext_resource type="PackedScene" uid="uid://226o2h1np8v6" path="res://prefabs/Pocket.tscn" id="3_47nt0"]
+
+[node name="Table" type="Node2D" node_paths=PackedStringArray("walls", "pockets")]
+script = ExtResource("1_3kx5o")
+walls = []
+pockets = [NodePath("PocketUL"), NodePath("PocketUM"), NodePath("PocketUR"), NodePath("PocketLR"), NodePath("PocketLM"), NodePath("PocketLL")]
+ball_template = ExtResource("2_afugx")
+
+[node name="background" type="Sprite2D" parent="."]
+scale = Vector2(262, 150)
+texture = ExtResource("1_86lqi")
+centered = false
+
+[node name="BorderL" parent="." instance=ExtResource("2_6xl5m")]
+position = Vector2(5, 75)
+scale = Vector2(10, 150)
+
+[node name="BorderR" parent="." instance=ExtResource("2_6xl5m")]
+position = Vector2(257, 75)
+scale = Vector2(10, 150)
+
+[node name="BorderT" parent="." instance=ExtResource("2_6xl5m")]
+position = Vector2(131, 0)
+scale = Vector2(262, 10)
+
+[node name="BorderB" parent="." instance=ExtResource("2_6xl5m")]
+position = Vector2(131, 150)
+scale = Vector2(262, 10)
+
+[node name="PocketUL" parent="." instance=ExtResource("3_47nt0")]
+position = Vector2(10, 5)
+
+[node name="PocketUM" parent="." instance=ExtResource("3_47nt0")]
+position = Vector2(131, 5)
+
+[node name="PocketUR" parent="." instance=ExtResource("3_47nt0")]
+position = Vector2(252, 5)
+
+[node name="PocketLR" parent="." instance=ExtResource("3_47nt0")]
+position = Vector2(252, 144)
+
+[node name="PocketLM" parent="." instance=ExtResource("3_47nt0")]
+position = Vector2(131, 146)
+
+[node name="PocketLL" parent="." instance=ExtResource("3_47nt0")]
+position = Vector2(10, 145)

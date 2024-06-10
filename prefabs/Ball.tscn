@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyljq4uet1tb6"]
+
+[ext_resource type="Script" path="res://scripts/Ball.cs" id="1_ecqqn"]
+[ext_resource type="Texture2D" uid="uid://d28u6ngj7001v" path="res://textures/ball.png" id="2_03tdk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmmbg"]
+radius = 0.5
+
+[node name="Ball" type="RigidBody2D" node_paths=PackedStringArray("stripe", "solid", "text")]
+gravity_scale = 0.0
+linear_damp = 0.18
+script = ExtResource("1_ecqqn")
+stripe = NodePath("CollisionShape2D/stripe")
+solid = NodePath("CollisionShape2D/solid")
+text = NodePath("CollisionShape2D/RichTextLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5.715, 5.715)
+shape = SubResource("CircleShape2D_pmmbg")
+
+[node name="solid" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("2_03tdk")
+
+[node name="stripe" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(1, 0.4)
+texture = ExtResource("2_03tdk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CollisionShape2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.174978
+offset_top = -0.349956
+offset_right = 39.825
+offset_bottom = 39.65
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "1"
+fit_content = true
